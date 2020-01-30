@@ -4,18 +4,21 @@ import { LocalStorage } from 'combo-storage';
 
 const CookieConsentStyle = {
   position: 'fixed',
+  display: 'flex',
+  flexFlow: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
   right: 0,
   left: 0,
   boxShadow: '0 0 3px rgba(0, 0, 0, 0.12), 0 0 2px rgba(0, 0, 0, 0.24)',
   zIndex: 900,
 };
 
-const CookieConsentCloseStyle = {
-  textAlign: 'center',
-  position: 'absolute',
-  transform: 'rotate(45deg)',
+const CookieConsentButtonStyle = {
+  borderRadius: '3px',
+  boxShadow: '0 0 3px rgba(0, 0, 0, 0.12), 0 0 2px rgba(0, 0, 0, 0.24)',
+  whiteSpace: 'nowrap',
   cursor: 'pointer',
-  fontFamily: '-webkit-pictograph',
 };
 
 class CookieConsent extends Component {
@@ -31,20 +34,24 @@ class CookieConsent extends Component {
   static propTypes = {
     background: PropTypes.string,
     bottomPosition: PropTypes.bool,
+    buttonText: PropTypes.string,
+    buttonBackground: PropTypes.string,
+    buttonColor: PropTypes.string,
+    buttonFontSize: PropTypes.number,
     children: PropTypes.any,
     className: PropTypes.string,
     color: PropTypes.string,
-    closeIconSize: PropTypes.number,
-    closeIconPositionTop: PropTypes.bool,
     padding: PropTypes.number,
   };
 
   static defaultProps = {
     background: '#fff',
     bottomPosition: false,
+    buttonText: 'I agree',
+    buttonBackground: '#fff',
+    buttonColor: '#000',
+    buttonFontSize: 16,
     color: '#000',
-    closeIconSize: 28,
-    closeIconPositionTop: false,
     padding: 20,
   };
 
@@ -70,11 +77,13 @@ class CookieConsent extends Component {
     const {
       background,
       bottomPosition,
+      buttonText,
+      buttonBackground,
+      buttonColor,
+      buttonFontSize,
       children,
       className,
       color,
-      closeIconSize,
-      closeIconPositionTop,
       padding,
     } = this.props;
     const closeConsent = this.state.close;
@@ -82,26 +91,25 @@ class CookieConsent extends Component {
     const styleForCookieConsent = {
       visibility: closeConsent ? 'hidden' : 'visible',
       backgroundColor: background,
-      padding: `${padding}px`,
-      paddingRight: `${closeIconSize + padding}px`,
+      padding: `${padding / 2}px`,
       color,
       ...positionObj,
       ...CookieConsentStyle,
     };
     const styleForCloseButton = {
-      lineHeight: `${closeIconSize}px`,
-      width: `${closeIconSize}px`,
-      height: `${closeIconSize}px`,
-      fontSize: `${closeIconSize}px`,
-      marginTop: closeIconPositionTop ? 0 : `${closeIconSize / -2}px`,
-      right: `${padding / 2}px`,
-      top: closeIconPositionTop ? `${padding / 2}px` : '50%',
-      ...CookieConsentCloseStyle,
+      backgroundColor: buttonBackground,
+      color: buttonColor,
+      height: `${buttonFontSize}px`,
+      lineHeight: `${buttonFontSize}px`,
+      fontSize: `${buttonFontSize}px`,
+      margin: `0 ${padding / 2}px`,
+      padding: `${padding / 2}px ${padding}px`,
+      ...CookieConsentButtonStyle,
     };
     return (
       <div id='cookie-consent' className={className} style={className ? {} : styleForCookieConsent}>
-        <div id='cookie-consent-close' onClick={this.closeConsent} style={styleForCloseButton}>+</div>
-        {children}
+        <div style={{ padding: `${padding / 2}px` }}>{children}</div>
+        <div id='cookie-consent-button' onClick={this.closeConsent} style={styleForCloseButton}>{buttonText}</div>
       </div>
     );
   }
