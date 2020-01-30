@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CookieDisclaimer should render correctly 1`] = `
+exports[`CookieConsent should render correctly 1`] = `
 <div
   id="cookie-disclaimer"
   style={
@@ -53,7 +53,7 @@ exports[`CookieDisclaimer should render correctly 1`] = `
         }
       }
     >
-       By continuing to use the service, you agree to our use of cookies as described in the 
+       By continuing to use the service, you agree to our use of cookies as described in the
       <a
         href=""
         id="cookie-policy-link"

@@ -1,4 +1,4 @@
-# Contributing to react-cookie-disclaimer
+# Contributing to react-cookie-consent-notification
 :pray: Thank you for wanting to contribute to the development of the project!
 
 

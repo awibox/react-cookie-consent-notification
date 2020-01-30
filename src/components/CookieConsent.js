@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { LocalStorage } from 'combo-storage';
 
-const cookieDisclaimerStyle = {
+const CookieConsentStyle = {
   position: 'fixed',
   right: 0,
   left: 0,
@@ -10,7 +10,7 @@ const cookieDisclaimerStyle = {
   zIndex: 900,
 };
 
-const cookieDisclaimerCloseStyle = {
+const CookieConsentCloseStyle = {
   textAlign: 'center',
   position: 'absolute',
   transform: 'rotate(45deg)',
@@ -18,12 +18,12 @@ const cookieDisclaimerCloseStyle = {
   fontFamily: '-webkit-pictograph',
 };
 
-class CookieDisclaimer extends Component {
+class CookieConsent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       close: false,
-      hasStorage: LocalStorage.get('react-cookie-disclaimer'),
+      hasStorage: LocalStorage.get('react-cookie-consent-notification'),
     };
     this.closeDisclaimer = this.closeDisclaimer.bind(this);
   }
@@ -58,7 +58,7 @@ class CookieDisclaimer extends Component {
 
   closeDisclaimer() {
     this.setState({ close: true });
-    LocalStorage.set('react-cookie-disclaimer', true);
+    LocalStorage.set('react-cookie-consent-notification', true);
     if (!this.props.bottomPosition) {
       document.body.style.marginTop = 0;
     }
@@ -91,14 +91,14 @@ class CookieDisclaimer extends Component {
     } = this.props;
     const closeDisclaimer = this.state.close;
     const positionObj = bottomPosition ? { bottom: 0 } : { top: 0 };
-    const styleForCookieDisclaimer = {
+    const styleForCookieConsent = {
       visibility: closeDisclaimer ? 'hidden' : 'visible',
       backgroundColor: background,
       padding: `${padding}px`,
       paddingRight: `${closeIconSize + padding}px`,
       color,
       ...positionObj,
-      ...cookieDisclaimerStyle,
+      ...CookieConsentStyle,
     };
     const styleForCloseButton = {
       lineHeight: `${closeIconSize}px`,
@@ -108,10 +108,10 @@ class CookieDisclaimer extends Component {
       marginTop: closeIconPositionTop ? 0 : `${closeIconSize / -2}px`,
       right: `${padding / 2}px`,
       top: closeIconPositionTop ? `${padding / 2}px` : '50%',
-      ...cookieDisclaimerCloseStyle,
+      ...CookieConsentCloseStyle,
     };
     return (
-      <div id='cookie-disclaimer' className={className} style={className ? {} : styleForCookieDisclaimer}>
+      <div id='cookie-disclaimer' className={className} style={className ? {} : styleForCookieConsent}>
         <div id='cookie-disclaimer-close' onClick={this.closeDisclaimer} style={styleForCloseButton}>+</div>
         {children || <div id='cookie-disclaimer-text'>
           {text}
@@ -125,4 +125,4 @@ class CookieDisclaimer extends Component {
     );
   }
 }
-export default CookieDisclaimer;
+export default CookieConsent;
