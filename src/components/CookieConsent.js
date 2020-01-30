@@ -52,6 +52,7 @@ class CookieConsent extends Component {
     buttonBackground: '#fff',
     buttonColor: '#000',
     buttonFontSize: 16,
+    children: 'This website uses cookies to improve service, for analytical and advertising purposes.',
     color: '#000',
     consentFunction: () => {},
     padding: 20,
