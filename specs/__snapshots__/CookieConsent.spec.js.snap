@@ -2,7 +2,7 @@
 
 exports[`CookieConsent should render correctly 1`] = `
 <div
-  id="cookie-disclaimer"
+  id="cookie-consent"
   style={
     Object {
       "backgroundColor": "#fff",
@@ -20,7 +20,7 @@ exports[`CookieConsent should render correctly 1`] = `
   }
 >
   <div
-    id="cookie-disclaimer-close"
+    id="cookie-consent-close"
     onClick={[Function]}
     style={
       Object {
@@ -40,32 +40,6 @@ exports[`CookieConsent should render correctly 1`] = `
     }
   >
     +
-  </div>
-  <div
-    id="cookie-disclaimer-text"
-  >
-    This website uses cookies to improve service, for analytical and advertising purposes.
-    <span
-      id="cookie-policy"
-      style={
-        Object {
-          "display": "none",
-        }
-      }
-    >
-       By continuing to use the service, you agree to our use of cookies as described in the
-      <a
-        href=""
-        id="cookie-policy-link"
-        style={
-          Object {
-            "color": "#000",
-          }
-        }
-      >
-        Cookie Policy
-      </a>
-    </span>
   </div>
 </div>
 `;
