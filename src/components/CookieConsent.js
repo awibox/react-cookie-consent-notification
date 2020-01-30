@@ -26,9 +26,9 @@ class CookieConsent extends Component {
     super(props);
     this.state = {
       close: false,
-      hasStorage: LocalStorage.get('react-cookie-consent-notification'),
+      hasStorage: !!LocalStorage.get('react-cookie-consent-notification'),
     };
-    this.closeConsent = this.closeConsent.bind(this);
+    this.consentAction = this.consentAction.bind(this);
   }
 
   static propTypes = {
@@ -41,6 +41,7 @@ class CookieConsent extends Component {
     children: PropTypes.any,
     className: PropTypes.string,
     color: PropTypes.string,
+    consentFunction: PropTypes.func,
     padding: PropTypes.number,
   };
 
@@ -52,15 +53,17 @@ class CookieConsent extends Component {
     buttonColor: '#000',
     buttonFontSize: 16,
     color: '#000',
+    consentFunction: () => {},
     padding: 20,
   };
 
-  closeConsent() {
+  consentAction() {
     this.setState({ close: true });
     LocalStorage.set('react-cookie-consent-notification', true);
     if (!this.props.bottomPosition) {
       document.body.style.marginTop = 0;
     }
+    this.props.consentFunction(true);
   }
 
   componentDidMount() {
@@ -68,6 +71,7 @@ class CookieConsent extends Component {
       const consent = document.getElementById('cookie-consent').offsetHeight;
       document.body.style.marginTop = `${consent}px`;
     }
+    this.props.consentFunction(this.state.hasStorage);
   }
 
   render() {
@@ -86,10 +90,10 @@ class CookieConsent extends Component {
       color,
       padding,
     } = this.props;
-    const closeConsent = this.state.close;
+    const consentAction = this.state.close;
     const positionObj = bottomPosition ? { bottom: 0 } : { top: 0 };
     const styleForCookieConsent = {
-      visibility: closeConsent ? 'hidden' : 'visible',
+      visibility: consentAction ? 'hidden' : 'visible',
       backgroundColor: background,
       padding: `${padding / 2}px`,
       color,
@@ -109,7 +113,7 @@ class CookieConsent extends Component {
     return (
       <div id='cookie-consent' className={className} style={className ? {} : styleForCookieConsent}>
         <div style={{ padding: `${padding / 2}px` }}>{children}</div>
-        <div id='cookie-consent-button' onClick={this.closeConsent} style={styleForCloseButton}>{buttonText}</div>
+        <div id='cookie-consent-button' onClick={this.consentAction} style={styleForCloseButton}>{buttonText}</div>
       </div>
     );
   }
