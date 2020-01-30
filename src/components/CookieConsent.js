@@ -25,7 +25,7 @@ class CookieConsent extends Component {
       close: false,
       hasStorage: LocalStorage.get('react-cookie-consent-notification'),
     };
-    this.closeDisclaimer = this.closeDisclaimer.bind(this);
+    this.closeConsent = this.closeConsent.bind(this);
   }
 
   static propTypes = {
@@ -34,29 +34,21 @@ class CookieConsent extends Component {
     children: PropTypes.any,
     className: PropTypes.string,
     color: PropTypes.string,
-    cookiePolicyLink: PropTypes.string,
-    cookiePolicyName: PropTypes.string,
-    cookiePolicyText: PropTypes.string,
     closeIconSize: PropTypes.number,
     closeIconPositionTop: PropTypes.bool,
     padding: PropTypes.number,
-    text: PropTypes.string,
   };
 
   static defaultProps = {
     background: '#fff',
     bottomPosition: false,
     color: '#000',
-    cookiePolicyLink: '',
-    cookiePolicyName: 'Cookie Policy',
-    cookiePolicyText: 'By continuing to use the service, you agree to our use of cookies as described in the',
     closeIconSize: 28,
     closeIconPositionTop: false,
     padding: 20,
-    text: 'This website uses cookies to improve service, for analytical and advertising purposes.',
   };
 
-  closeDisclaimer() {
+  closeConsent() {
     this.setState({ close: true });
     LocalStorage.set('react-cookie-consent-notification', true);
     if (!this.props.bottomPosition) {
@@ -66,8 +58,8 @@ class CookieConsent extends Component {
 
   componentDidMount() {
     if (!this.state.hasStorage && !this.props.bottomPosition) {
-      const disclaimer = document.getElementById('cookie-disclaimer').offsetHeight;
-      document.body.style.marginTop = `${disclaimer}px`;
+      const consent = document.getElementById('cookie-consent').offsetHeight;
+      document.body.style.marginTop = `${consent}px`;
     }
   }
 
@@ -81,18 +73,14 @@ class CookieConsent extends Component {
       children,
       className,
       color,
-      cookiePolicyLink,
-      cookiePolicyText,
-      cookiePolicyName,
       closeIconSize,
       closeIconPositionTop,
       padding,
-      text,
     } = this.props;
-    const closeDisclaimer = this.state.close;
+    const closeConsent = this.state.close;
     const positionObj = bottomPosition ? { bottom: 0 } : { top: 0 };
     const styleForCookieConsent = {
-      visibility: closeDisclaimer ? 'hidden' : 'visible',
+      visibility: closeConsent ? 'hidden' : 'visible',
       backgroundColor: background,
       padding: `${padding}px`,
       paddingRight: `${closeIconSize + padding}px`,
@@ -111,16 +99,9 @@ class CookieConsent extends Component {
       ...CookieConsentCloseStyle,
     };
     return (
-      <div id='cookie-disclaimer' className={className} style={className ? {} : styleForCookieConsent}>
-        <div id='cookie-disclaimer-close' onClick={this.closeDisclaimer} style={styleForCloseButton}>+</div>
-        {children || <div id='cookie-disclaimer-text'>
-          {text}
-          <span id='cookie-policy' style={{ display: cookiePolicyLink ? 'inline' : 'none' }}>
-            {` ${cookiePolicyText} `}
-            <a id='cookie-policy-link' href={cookiePolicyLink} style={{ color }}>{cookiePolicyName}</a>
-          </span>
-        </div>
-        }
+      <div id='cookie-consent' className={className} style={className ? {} : styleForCookieConsent}>
+        <div id='cookie-consent-close' onClick={this.closeConsent} style={styleForCloseButton}>+</div>
+        {children}
       </div>
     );
   }
