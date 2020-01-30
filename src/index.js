@@ -1,3 +1,3 @@
-import CookieDisclaimer from './components/CookieDisclaimer';
+import CookieConsent from './components/CookieConsent';
 
-export default CookieDisclaimer;
+export default CookieConsent;

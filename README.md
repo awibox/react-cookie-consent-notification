@@ -1,19 +1,19 @@
-![react-cookie-disclaimer](https://repository-images.githubusercontent.com/229484861/fbde4700-36cf-11ea-88fe-db2690c68f8e)
+![react-cookie-consent-notification](https://repository-images.githubusercontent.com/229484861/fbde4700-36cf-11ea-88fe-db2690c68f8e)
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/react-cookie-disclaimer">
-        <img src="https://img.shields.io/npm/v/react-cookie-disclaimer" alt="npm version">
+    <a href="https://www.npmjs.com/package/react-cookie-consent-notification">
+        <img src="https://img.shields.io/npm/v/react-cookie-consent-notification" alt="npm version">
     </a>
-    <a href="https://travis-ci.org/awibox/react-cookie-disclaimer">
-        <img src='https://travis-ci.org/awibox/react-cookie-disclaimer.svg?branch=master' alt='Build' />
+    <a href="https://travis-ci.org/awibox/react-cookie-consent-notification">
+        <img src='https://travis-ci.org/awibox/react-cookie-consent-notification.svg?branch=master' alt='Build' />
     </a>
-    <a href='https://coveralls.io/github/awibox/react-cookie-disclaimer?branch=master'>
-        <img src='https://coveralls.io/repos/github/awibox/react-cookie-disclaimer/badge.svg?branch=master' alt='Coverage Status' />
+    <a href='https://coveralls.io/github/awibox/react-cookie-consent-notification?branch=master'>
+        <img src='https://coveralls.io/repos/github/awibox/react-cookie-consent-notification/badge.svg?branch=master' alt='Coverage Status' />
     </a>
-    <a href="https://www.npmjs.com/package/react-cookie-disclaimer">
-        <img src="https://img.shields.io/npm/dm/react-cookie-disclaimer" alt="Downloads">
+    <a href="https://www.npmjs.com/package/react-cookie-consent-notification">
+        <img src="https://img.shields.io/npm/dm/react-cookie-consent-notification" alt="Downloads">
     </a>
-    <img src="https://img.shields.io/npm/l/react-cookie-disclaimer" alt="license">
+    <img src="https://img.shields.io/npm/l/react-cookie-consent-notification" alt="license">
 </p>
 
 ## Table of contents
@@ -29,21 +29,21 @@
 ## Installation
 You need to install package:
 ```bash
-npm install react-cookie-disclaimer
+npm install react-cookie-consent-notification
 ```
 You can use yarn:
 ```bash
-yarn add react-cookie-disclaimer
+yarn add react-cookie-consent-notification
 ```
 <a name="gettingstarted"></a>
 ## Getting started
 You should import the component:
 ```js
-import CookieDisclaimer from 'react-cookie-disclaimer';
+import CookieConsent from 'react-cookie-consent-notification';
 ```
 Then use the component in your application. For example:
 ```typescript jsx
-<CookieDisclaimer background='#0079c1' color='#fff' cookiePolicyLink='/cookie-policy' />
+<CookieConsent background='#0079c1' color='#fff' cookiePolicyLink='/cookie-policy' />
 ```
 
 <a name="settings"></a>
@@ -65,25 +65,25 @@ Then use the component in your application. For example:
 ## Custom content
 You can place your own content in the notification. You should call the component as follows:
 ```typescript jsx
-<CookieDisclaimer background='#000' color='#fff'>JSX custom content</CookieDisclaimer>
+<CookieConsent background='#000' color='#fff'>JSX custom content</CookieConsent>
 ```
 
 <a name="styles"></a>
 ## Custom styles
 You can also add custom styles by passing the ```className``` parameter:
 ```typescript jsx
-<CookieDisclaimer className={styles.cookieDisclaimer}>JSX custom content</CookieDisclaimer>
+<CookieConsent className={styles.CookieConsent}>JSX custom content</CookieConsent>
 ```
 
 <a name="example"></a>
 ## Example
 ```typescript jsx
-import CookieDisclaimer from 'react-cookie-disclaimer';
+import CookieConsent from 'react-cookie-consent-notification';
 
 const App = () => (
   <div className="app">
     ...
-    <CookieDisclaimer 
+    <CookieConsent 
       background='#0079c1' 
       bottomPosition={false}
       closeIconSize={30}
