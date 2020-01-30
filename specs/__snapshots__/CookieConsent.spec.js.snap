@@ -5,12 +5,15 @@ exports[`CookieConsent should render correctly 1`] = `
   id="cookie-consent"
   style={
     Object {
+      "alignItems": "center",
       "backgroundColor": "#fff",
       "boxShadow": "0 0 3px rgba(0, 0, 0, 0.12), 0 0 2px rgba(0, 0, 0, 0.24)",
       "color": "#000",
+      "display": "flex",
+      "flexFlow": "row",
+      "justifyContent": "space-between",
       "left": 0,
-      "padding": "20px",
-      "paddingRight": "48px",
+      "padding": "10px",
       "position": "fixed",
       "right": 0,
       "top": 0,
@@ -20,26 +23,32 @@ exports[`CookieConsent should render correctly 1`] = `
   }
 >
   <div
-    id="cookie-consent-close"
+    style={
+      Object {
+        "padding": "10px",
+      }
+    }
+  />
+  <div
+    id="cookie-consent-button"
     onClick={[Function]}
     style={
       Object {
+        "backgroundColor": "#fff",
+        "borderRadius": "3px",
+        "boxShadow": "0 0 3px rgba(0, 0, 0, 0.12), 0 0 2px rgba(0, 0, 0, 0.24)",
+        "color": "#000",
         "cursor": "pointer",
-        "fontFamily": "-webkit-pictograph",
-        "fontSize": "28px",
-        "height": "28px",
-        "lineHeight": "28px",
-        "marginTop": "-14px",
-        "position": "absolute",
-        "right": "10px",
-        "textAlign": "center",
-        "top": "50%",
-        "transform": "rotate(45deg)",
-        "width": "28px",
+        "fontSize": "16px",
+        "height": "16px",
+        "lineHeight": "16px",
+        "margin": "0 10px",
+        "padding": "10px 20px",
+        "whiteSpace": "nowrap",
       }
     }
   >
-    +
+    I agree
   </div>
 </div>
 `;
