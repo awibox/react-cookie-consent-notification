@@ -38,6 +38,7 @@ class CookieConsent extends Component {
     buttonBackground: PropTypes.string,
     buttonColor: PropTypes.string,
     buttonFontSize: PropTypes.number,
+    buttonClassName: PropTypes.string,
     children: PropTypes.any,
     className: PropTypes.string,
     color: PropTypes.string,
@@ -86,6 +87,7 @@ class CookieConsent extends Component {
       buttonBackground,
       buttonColor,
       buttonFontSize,
+      buttonClassName,
       children,
       className,
       color,
@@ -114,7 +116,9 @@ class CookieConsent extends Component {
     return (
       <div id='cookie-consent' className={className} style={className ? {} : styleForCookieConsent}>
         <div style={{ padding: `${padding / 2}px` }}>{children}</div>
-        <div id='cookie-consent-button' onClick={this.consentAction} style={styleForCloseButton}>{buttonText}</div>
+        <div id='cookie-consent-button'
+             onClick={this.consentAction}
+             style={buttonClassName ? {} : styleForCloseButton}>{buttonText}</div>
       </div>
     );
   }
