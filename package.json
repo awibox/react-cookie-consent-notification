@@ -1,6 +1,6 @@
 {
   "name": "react-cookie-consent-notification",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "The package will help you display a notification of consent to the use of cookies on the site",
   "main": "./dist/index.js",
   "scripts": {
