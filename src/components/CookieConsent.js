@@ -118,6 +118,7 @@ class CookieConsent extends Component {
         <div style={{ padding: `${padding / 2}px` }}>{children}</div>
         <div id='cookie-consent-button'
              onClick={this.consentAction}
+             className={buttonClassName}
              style={buttonClassName ? {} : styleForCloseButton}>{buttonText}</div>
       </div>
     );
