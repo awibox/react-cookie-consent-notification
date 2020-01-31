@@ -28,7 +28,9 @@ exports[`CookieConsent should render correctly 1`] = `
         "padding": "10px",
       }
     }
-  />
+  >
+    This website uses cookies to improve service, for analytical and advertising purposes.
+  </div>
   <div
     id="cookie-consent-button"
     onClick={[Function]}
