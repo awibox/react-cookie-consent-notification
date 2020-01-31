@@ -5,7 +5,6 @@ import { LocalStorage } from 'combo-storage';
 const CookieConsentStyle = {
   position: 'fixed',
   display: 'flex',
-  flexFlow: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
   right: 0,
@@ -26,6 +25,7 @@ class CookieConsent extends Component {
     super(props);
     this.state = {
       close: false,
+      widthScreen: 1000,
       hasStorage: !!LocalStorage.get('react-cookie-consent-notification'),
     };
     this.consentAction = this.consentAction.bind(this);
@@ -69,10 +69,12 @@ class CookieConsent extends Component {
   }
 
   componentDidMount() {
-    if (!this.state.hasStorage && !this.props.bottomPosition) {
-      const consent = document.getElementById('cookie-consent').offsetHeight;
-      document.body.style.marginTop = `${consent}px`;
-    }
+    this.setState({ widthScreen: document.body.clientWidth }, () => {
+      if (!this.state.hasStorage && !this.props.bottomPosition) {
+        const consent = document.getElementById('cookie-consent').offsetHeight;
+        document.body.style.marginTop = `${consent}px`;
+      }
+    });
     this.props.consentFunction(this.state.hasStorage);
   }
 
@@ -95,10 +97,12 @@ class CookieConsent extends Component {
     } = this.props;
     const consentAction = this.state.close;
     const positionObj = bottomPosition ? { bottom: 0 } : { top: 0 };
+    const isMobile = this.state.widthScreen < 580;
     const styleForCookieConsent = {
       visibility: consentAction ? 'hidden' : 'visible',
       backgroundColor: background,
       padding: `${padding / 2}px`,
+      flexFlow: isMobile ? 'column' : 'row',
       color,
       ...positionObj,
       ...CookieConsentStyle,
@@ -109,7 +113,7 @@ class CookieConsent extends Component {
       height: `${buttonFontSize}px`,
       lineHeight: `${buttonFontSize}px`,
       fontSize: `${buttonFontSize}px`,
-      margin: `0 ${padding / 2}px`,
+      margin: isMobile ? `${padding / 2}px 0` : `0 ${padding / 2}px`,
       padding: `${padding / 2}px ${padding}px`,
       ...CookieConsentButtonStyle,
     };
@@ -124,4 +128,5 @@ class CookieConsent extends Component {
     );
   }
 }
+
 export default CookieConsent;
