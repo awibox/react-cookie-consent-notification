@@ -7,6 +7,7 @@ const testBackground = '#000';
 const testText = 'This is correct text';
 const testCustomContent = 'Custom content';
 const testClassName = 'customClass';
+const testPadding = 20;
 
 describe('CookieConsent', () => {
   it('should render correctly', () => {
@@ -61,5 +62,13 @@ describe('CookieConsent', () => {
       {testCustomContent}
     </CookieConsent>);
     expect(component.find('#cookie-consent-button')).toHaveClassName(testClassName);
+  });
+  it('should have a mobile version', () => {
+    document.body.clientWidth = 400;
+    const component = shallow(<CookieConsent padding={testPadding}>
+      {testCustomContent}
+    </CookieConsent>);
+    expect(component.find('#cookie-consent').get(0).props.style.flexFlow).toEqual('column');
+    expect(component.find('#cookie-consent-button').get(0).props.style.margin).toEqual(`${testPadding / 2}px 0`);
   });
 });
