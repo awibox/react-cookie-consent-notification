@@ -63,7 +63,7 @@ Then use the component in your application. You should call the component as fol
 ## Custom styles
 You can also add custom styles by passing the ```className``` parameter:
 ```typescript jsx
-<CookieConsent className={styles.CookieConsent}>JSX custom content</CookieConsent>
+<CookieConsent className={styles.CookieConsent} buttonClassName={styles.btn}>Your content</CookieConsent>
 ```
 
 <a name="example"></a>
@@ -74,8 +74,6 @@ import CookieConsent from 'react-cookie-consent-notification';
 const checkStatus = (status) => {
   if(status) {
     // To set a cookies
-  } else {
-    // To don't set a cookies
   }
 };
 
