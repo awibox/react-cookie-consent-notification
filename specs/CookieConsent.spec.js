@@ -50,4 +50,16 @@ describe('CookieConsent', () => {
     </CookieConsent>);
     expect(component.find(`.${testClassName}`)).toExist();
   });
+  it('should have a className', () => {
+    const component = shallow(<CookieConsent className={testClassName}>
+      {testCustomContent}
+    </CookieConsent>);
+    expect(component.find(`.${testClassName}`)).toExist();
+  });
+  it('should have a button className', () => {
+    const component = shallow(<CookieConsent buttonClassName={testClassName}>
+      {testCustomContent}
+    </CookieConsent>);
+    expect(component.find('#cookie-consent-button')).toHaveClassName(testClassName);
+  });
 });
