@@ -14,16 +14,16 @@ Enzyme.configure({ adapter: new Adapter() });
 global.React = React;
 global.shallow = shallow;
 global.localStorage = {
-    getItem: () => false,
-    setItem: () => true,
+  getItem: () => false,
+  setItem: () => true,
 };
 global.document = {
-    getElementById: () => 0,
-    body: {
-        style: {
-            marginTop: 0
-        }
-    }
+  getElementById: () => 0,
+  body: {
+    style: {
+      marginTop: 0,
+    },
+  },
 };
 
 // Use fake timers for async events
