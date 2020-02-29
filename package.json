@@ -1,6 +1,6 @@
 {
   "name": "react-cookie-consent-notification",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The package will help you display a notification of consent to the use of cookies on the site",
   "main": "./dist/index.js",
   "scripts": {
@@ -49,7 +49,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "combo-storage": "^2.0.0",
+    "combo-storage": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
