@@ -1900,10 +1900,10 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-combo-storage@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/combo-storage/-/combo-storage-2.0.0.tgz#aabc32bb43f3ae0f209b6597e9319699660fa876"
-  integrity sha512-Vgd45bm4iMvxhOHuOqfagfCxzaqSpcQFH2j56St/N88rTCJObCwOrkx+6pl52FFFhpzAS4FSLhtef0Ias5gwtA==
+combo-storage@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/combo-storage/-/combo-storage-2.0.1.tgz#88b2a36556aa643de63f7296290725343e98db08"
+  integrity sha512-a/y23IkJNJwWCxeXKkFyWc2V61ITuvZOOpoFByBggBr/jOHi1DHAnW7nlPNUErVmdw9o2wLdcBrtiYKMrrQxMg==
 
 commander@^2.19.0, commander@^2.20.0:
   version "2.20.3"
