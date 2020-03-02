@@ -1,6 +1,6 @@
 {
   "name": "react-cookie-consent-notification",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The package will help you display a notification of consent to the use of cookies on the site",
   "main": "./dist/index.js",
   "scripts": {
@@ -45,12 +45,16 @@
     "eslint-plugin-react": "^7.17.0",
     "jest": "^24.9.0",
     "jest-enzyme": "^7.1.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "combo-storage": "^2.0.1",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
