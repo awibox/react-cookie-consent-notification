@@ -1,6 +1,6 @@
 {
   "name": "react-cookie-consent-notification",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The package will help you display a notification of consent to the use of cookies on the site",
   "main": "./dist/index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/awibox/react-cookie-consent-notification#readme",
   "devDependencies": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
@@ -43,11 +43,11 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-react": "^7.17.0",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "jest-enzyme": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "webpack": "^4.41.4",
+    "webpack": "^4.42.0",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
