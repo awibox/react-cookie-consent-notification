@@ -1,20 +1,17 @@
+<div align="center">
+
 ![react-cookie-consent-notification](https://repository-images.githubusercontent.com/237075259/34f60700-43b2-11ea-9327-71de40c3f917)
 
-<p align="center">
-    <a href="https://www.npmjs.com/package/react-cookie-consent-notification">
-        <img src="https://img.shields.io/npm/v/react-cookie-consent-notification" alt="npm version">
-    </a>
-    <a href="https://travis-ci.org/awibox/react-cookie-consent-notification">
-        <img src='https://travis-ci.org/awibox/react-cookie-consent-notification.svg?branch=master' alt='Build' />
-    </a>
-    <a href='https://coveralls.io/github/awibox/react-cookie-consent-notification?branch=master'>
-        <img src='https://coveralls.io/repos/github/awibox/react-cookie-consent-notification/badge.svg?branch=master' alt='Coverage Status' />
-    </a>
-    <a href="https://www.npmjs.com/package/react-cookie-consent-notification">
-        <img src="https://img.shields.io/npm/dm/react-cookie-consent-notification" alt="Downloads">
-    </a>
-    <img src="https://img.shields.io/npm/l/react-cookie-consent-notification" alt="license">
-</p>
+[![Version](https://img.shields.io/npm/v/react-cookie-consent-notification)](https://www.npmjs.com/package/react-cookie-consent-notification)
+[![Build](https://travis-ci.org/awibox/react-cookie-consent-notification.svg?branch=master)](https://travis-ci.org/awibox/react-cookie-consent-notification)
+[![Coverage](https://coveralls.io/repos/github/awibox/react-cookie-consent-notification/badge.svg?branch=master)](https://coveralls.io/github/awibox/react-cookie-consent-notification?branch=master)
+[![Minified size](https://img.shields.io/bundlephobia/min/react-cookie-consent-notification)](https://github.com/awibox/react-cookie-consent-notification/blob/master/LICENSE)
+[![Downloads](https://img.shields.io/npm/dm/react-cookie-consent-notification)](https://www.npmjs.com/package/react-cookie-consent-notification)
+[![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=awibox/react-cookie-consent-notification)](https://dependabot.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/awibox/react-cookie-consent-notification/pulls)
+[![Tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+
+</div>
 
 ## Table of contents
 * [Installation](#installation)
